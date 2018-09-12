@@ -1,7 +1,12 @@
 class EmployeesController < ApplicationController
   def create
     @employee = Employee.new(employee_params)
-    redirect_to @employee.company if @employee.save
+    @employee.company_id = params[:company_id] 
+    if @employee.save
+      redirect_to @employee.company
+    else
+      
+    end
   end
 
   def destroy
@@ -13,6 +18,6 @@ class EmployeesController < ApplicationController
   private
 
   def employee_params
-    params.require(:employee).permit(:first_name, :last_name, :email, :area_id, :company_id)
+    params.require(:employee).permit(:first_name, :last_name, :email, :area_id)
   end
 end

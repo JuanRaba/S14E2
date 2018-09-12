@@ -9,7 +9,7 @@
 <%= link_to 'Back', companies_path %>
 
 <%= form_with(model: [ @company, @employee ]) do |form| %>
-  <%= form.hidden_field :company_id, value: @company.id %>
+ 
 <p>
   <%= form.label :first_name %>
   <%= form.text_field :first_name %>
