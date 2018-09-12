@@ -1,0 +1,13 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Juan Rabanillo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link <%= 'active' if params[:action] == 'index'%>" href="<%= asset_path companies_path %>">Index <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link <%= 'active' if params[:controller] == "companies" and params[:action] == 'new'%>" href="<%= asset_path new_company_path %>">New Company</a>
+      <a class="nav-item nav-link <%= 'active' if params[:controller] == "areas" and params[:action] == 'new'%>" href="<%= asset_path new_area_path %>">New Area</a>
+    </div>
+  </div>
+</nav>

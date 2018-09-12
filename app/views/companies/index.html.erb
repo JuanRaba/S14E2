@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Companies</h1>
+<br>
+<%= link_to 'New Company', new_company_path, class: 'btn btn-success'  %>
 
 <table>
   <thead>
@@ -11,17 +13,20 @@
   </thead>
 
   <tbody>
+      <tr>
+        <td>Compañio</td>
+        <td>#empleados</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
     <% @companies.each do |company| %>
       <tr>
-        <td><%= company.name %></td>
-        <td><%= link_to 'Show', company %></td>
-        <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to company.name, company %></td>
+        <td><%= company.employees.count %></td>
+        <td><%= link_to 'Edit', edit_company_path(company), class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Company', new_company_path %>

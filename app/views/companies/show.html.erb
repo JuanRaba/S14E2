@@ -27,13 +27,20 @@
 </p>
 <% end %>
 
-<table>
+<table>    
+    <tr>
+      <td>Nombre</td>
+      <td>Apellido</td>
+      <td>email</td>
+      <td>Area</td>
+      <td>---</td>
+    </tr>
   <% @employees.each do |e| %>
     <tr>
       <td><%= e.first_name %></td>
       <td><%= e.last_name %></td>
       <td><%= e.email %></td>
-      <td><%= e.area.id %></td>
+      <td><%= e.area.name %></td>
       <td><%= link_to "borrar", company_employee_path(@company, e), method: :delete %></td>
     </tr>
   <% end %>
