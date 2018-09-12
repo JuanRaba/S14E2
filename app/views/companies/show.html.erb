@@ -34,7 +34,7 @@
       <td><%= e.last_name %></td>
       <td><%= e.email %></td>
       <td><%= e.area.id %></td>
-      <td><!--%= link_to "borrar", company_employee_path(@category, p), method: :delete %--></td>
+      <td><%= link_to "borrar", company_employee_path(@company, e), method: :delete %></td>
     </tr>
   <% end %>
 </table>

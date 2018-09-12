@@ -4,6 +4,12 @@ class EmployeesController < ApplicationController
     redirect_to @employee.company if @employee.save
   end
 
+  def destroy
+    @employee = Employee.find(params[:id])
+    @employee.destroy
+    redirect_to @employee.company 
+  end
+
   private
 
   def employee_params
